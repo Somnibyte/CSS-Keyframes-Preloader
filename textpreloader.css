@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Chango);
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+
+/*PRELOADER ITEMS GO HERE*/
+body{
+  background-color: #3498db;
+  
+-webkit-animation: bodyPreloader 3s;
+  
+}
+
+.opening p{
+  position: relative;
+  top: 240px;
+  font-size: 50px;
+  color: white;
+  font-family: 'Lato';
+  text-align: center;
+  opacity: 0;
+  -webkit-animation: emblemPreload 4s ease-out;
+}
+
+/*WEBSITE CSS ELEMENTS GO HERE*/
+#description{
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  background-color:#2980b9;
+  border-radius: 10px;
+  font-family: 'Lato';
+  color: white;
+  text-indent: 10px;
+  -webkit-animation: content 1s ease-in;
+  -webkit-animation-duration:2s;
+}
+
+
+
+
+
+/*Animation*/
+
+@-webkit-keyframes content{
+    0%{opacity: 0;}
+}
+
+@-webkit-keyframes floating{
+  0%{-webkit-transform: translateY(50px); opacity: 0; }
+  100%{-webkit-transform: translateY(0px);}
+}
+
+@-webkit-keyframes bodyPreloader{
+  0%{background:black;}
+ 
+}
+
+@-webkit-keyframes emblemPreload{
+  0%{opacity: 1;}
+  25%{opacity: 1;}
+  50%{opacity: 0;]
+  100%{opacity: 0;}
+}
+
