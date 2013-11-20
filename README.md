@@ -1,6 +1,8 @@
 The first ever [pure] CSS 'preloader'!
 
-TEXT DEMO: http://jsbin.com/omAWEhO/7/quiet IMAGE DEMO:http://jsbin.com/eMEKiNo/2/quiet
+TEXT DEMO: http://jsbin.com/omAWEhO/7/quiet 
+
+IMAGE DEMO:http://jsbin.com/eMEKiNo/2/quiet
 
 This is how the CSS Keyframe preloader works.
 
