@@ -1,5 +1,7 @@
 The first ever [pure] CSS 'preloader'!
 
+[Note this is my first time posting ANYTHING on Github, hold your judgements for later]
+
 TEXT DEMO: http://jsbin.com/omAWEhO/7/quiet 
 
 IMAGE DEMO:http://jsbin.com/eMEKiNo/2/quiet
