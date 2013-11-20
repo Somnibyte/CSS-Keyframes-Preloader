@@ -1,4 +1,4 @@
-The first ever [pure] CSS 'preloader'!
+CSS Keyframe Preloader
 
 [Note this is my first time posting ANYTHING on Github, hold your judgements for later]
 
