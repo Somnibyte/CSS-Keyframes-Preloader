@@ -4,9 +4,11 @@
 /*PRELOADER ITEMS GO HERE*/
 body{
   background-color: #2ecc71;
-  
--webkit-animation: bodyPreloader 3s;
-  
+  -webkit-animation: bodyPreloader 3s;
+  -moz-animation: bodyPreloader 3s;
+  -o-animation: bodyPreloader 3s;
+   animation: bodyPreloader 3s;
+
 }
 
 .opening img{
@@ -19,6 +21,10 @@ body{
     margin-right: auto;
     opacity: 0;
   -webkit-animation: emblemPreload 4s ease-out;
+  -moz-animation: emblemPreload 4s ease-out;
+  -o-animation: emblemPreload 4s ease-out;
+ animation: emblemPreload 4s ease-out;
+   
 }
 
 /*WEBSITE CSS ELEMENTS GO HERE*/
@@ -35,25 +41,66 @@ body{
   color: white;
   text-indent: 10px;
   -webkit-animation: content 1s ease-in;
+   -moz-animation: content 1s ease-in;
+   -o-animation: content 1s ease-in;
+   animation: content 1s ease-in;
   
 }
 
-
-
-
-/*Animation*/
-
-@-webkit-keyframes content{
-    0%{opacity: 0;}
+/*ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE)*/
+@-webkit-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
 }
 
+@-moz-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@-o-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+
+/*ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)*/
+@-webkit-keyframes content{
+  0%   { opacity: 0; }
+}
+@-moz-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*BODY ANIMATION (THE ANIMATION THAT MADE THE BODY ELEMENT BLACK)*/
 @-webkit-keyframes bodyPreloader{
   0%{background:black;}
  
 }
-
-@-webkit-keyframes emblemPreload{
-  0%{opacity: 1;}
-  50%{opacity: 0;]
-  100%{opacity: 0;}
+@-moz-keyframes bodyPreloader{
+  0%{background:black;}
+ 
 }
+@-o-keyframes bodyPreloader{
+  0%{background:black;}
+ 
+}
+@keyframes bodyPreloader{
+  0%{background:black;}
+}
+
