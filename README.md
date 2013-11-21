@@ -1,7 +1,8 @@
 CSS Keyframe Preloader
 
 [Note: this is my first time posting ANYTHING on Github, hold your judgements for later]
-[Note:The keyframe feature may not work for older browsers, please beaware of this before you claim to see "no" effect, for more information
+
+[Note:The keyframe feature may not work for older browsers, please be aware of this before you claim to see "no" effect, for more information
 on browser support please click on the link below. Thank you.]
 
 UPDATE: 11:54 p.m. / Animations now support all browsers! (-webkit- was used in previous version) 
@@ -33,24 +34,80 @@ What I did next was bind the animation to the body like so:
 body{
 background-color: #3498db;
 
--webkit-animation: bodyPreloader 3s;
 
+-webkit-animation: bodyPreloader 3s;
+-moz-animation: bodyPreloader 3s;
+-o-animation: bodyPreloader 3s;
+animation: bodyPreloader 3s;
 }
 
-One the animation was binded to the element, I needed a way to over the content. So I gave the content an animation to hide itself until the body was done animating using this keyframe:
+When the animation was binded to the element, I needed a way to over the content. So I gave the content an animation to hide itself until the body was done animating using this keyframe:
 
-@-webkit-keyframes content{ 0%{opacity: 0;} }
+/*ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)*/
+@-webkit-keyframes content{
+  0%   { opacity: 0; }
+}
+@-moz-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: Example of ONE element (since this page only has one content div being used):
 
--webkit-animation: content 1s ease-in; -webkit-animation-duration:2s;
+.exampleElement{
+/*Element Attributes go below*/
 
+/*Animations down here*/
+ -webkit-animation: content 1s ease-in;
+   -moz-animation: content 1s ease-in;
+   -o-animation: content 1s ease-in;
+   animation: content 1s ease-in;
+}
 There you have it. Now if you would like to add an image (Like SquareSpace) or welcoming text simply make this animation:
 
-@-webkit-keyframes emblemPreload{ 0%{opacity: 1;} 25%{opacity: 1;} 50%{opacity: 0;] 100%{opacity: 0;} } What this animation does is shows the welcoming emblem (logo, designs, etc..) and later fades that piece of content away.
+/*ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE)*/
+@-webkit-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
 
-And bind it to the elment of your choosing:
+@-moz-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@-o-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
 
--webkit-animation: emblemPreload 4s ease-out;
+And bind it to the elment of your choosing (The one that will be displayed as text or an image with the body animation (See example for reference)):
+
+.exampleElement{
+ /*Element attributes go down here*/
+ 
+ 
+ /*Animations go here*/
+  -webkit-animation: emblemPreload 4s ease-out;
+  -moz-animation: emblemPreload 4s ease-out;
+  -o-animation: emblemPreload 4s ease-out;
+ animation: emblemPreload 4s ease-out;
+}
 
 NOTE: This is a prototype as of now. Any ideas are welcomed to improve this prototype of mine. You may modify the code to your liking. Remember to give credit, and give me a shout out. ;)
