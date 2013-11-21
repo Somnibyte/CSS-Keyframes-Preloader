@@ -1,6 +1,10 @@
 CSS Keyframe Preloader
 
-[Note this is my first time posting ANYTHING on Github, hold your judgements for later]
+[Note: this is my first time posting ANYTHING on Github, hold your judgements for later]
+[Note:The keyframe feature may not work for older browsers, please beaware of this before you claim to see "no" effect, for more information
+on browser support please click on the link below. Thank you.]
+
+BROWSER SUPPORT: http://caniuse.com/#search=keyframe
 
 TEXT DEMO: http://jsbin.com/omAWEhO/7/quiet 
 
@@ -24,7 +28,8 @@ This keyframe makes the body turn black, so that all pieces of content are cover
 
 What I did next was bind the animation to the body like so:
 
-body{ background-color: #3498db;
+body{
+background-color: #3498db;
 
 -webkit-animation: bodyPreloader 3s;
 
