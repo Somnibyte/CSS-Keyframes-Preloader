@@ -1,6 +1,7 @@
 CSS Keyframe Preloader
 
-[Note: this is my first time posting ANYTHING on Github, hold your judgements for later]
+
+[Note: this is my first time posting ANYTHING on Github, hold your judgements for later (I'll fix up this readme once I get the hang of things around here)]
 
 [Note:The keyframe feature may not work for older browsers, please be aware of this before you claim to see "no" effect, for more information
 on browser support please click on the link below. Thank you.]
