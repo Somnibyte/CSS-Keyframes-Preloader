@@ -43,7 +43,8 @@ animation: bodyPreloader 3s;
 
 When the animation was binded to the element, I needed a way to over the content. So I gave the content an animation to hide itself until the body was done animating using this keyframe:
 
-/*ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)*/
+[ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)]
+
 @-webkit-keyframes content{
   0%   { opacity: 0; }
 }
@@ -63,18 +64,24 @@ When the animation was binded to the element, I needed a way to over the content
 
 Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: Example of ONE element (since this page only has one content div being used):
 
-.exampleElement{
-/*Element Attributes go below*/
 
-/*Animations down here*/
+.exampleElement{
+[Element Attributes go below]
+
+[Animations down here]
  -webkit-animation: content 1s ease-in;
    -moz-animation: content 1s ease-in;
    -o-animation: content 1s ease-in;
    animation: content 1s ease-in;
 }
+
+
 There you have it. Now if you would like to add an image (Like SquareSpace) or welcoming text simply make this animation:
 
-/*ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE)*/
+
+
+[ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE]
+
 @-webkit-keyframes emblemPreload{
   0%{opacity: 1;}
   50%{opacity: 0;}
@@ -100,14 +107,16 @@ There you have it. Now if you would like to add an image (Like SquareSpace) or w
 And bind it to the elment of your choosing (The one that will be displayed as text or an image with the body animation (See example for reference)):
 
 .exampleElement{
- /*Element attributes go down here*/
+ [Element attributes go down here]
  
  
- /*Animations go here*/
+ [Animations go down here]
+ 
   -webkit-animation: emblemPreload 4s ease-out;
   -moz-animation: emblemPreload 4s ease-out;
   -o-animation: emblemPreload 4s ease-out;
  animation: emblemPreload 4s ease-out;
+ 
 }
 
 NOTE: This is a prototype as of now. Any ideas are welcomed to improve this prototype of mine. You may modify the code to your liking. Remember to give credit, and give me a shout out. ;)
