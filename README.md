@@ -4,11 +4,13 @@ CSS Keyframe Preloader
 [Note:The keyframe feature may not work for older browsers, please beaware of this before you claim to see "no" effect, for more information
 on browser support please click on the link below. Thank you.]
 
+UPDATE: 11:54 p.m. / Animations now support all browsers! (-webkit- was used in previous version) 
+
 BROWSER SUPPORT: http://caniuse.com/#search=keyframe
 
-TEXT DEMO: http://jsbin.com/omAWEhO/7/quiet 
+TEXT DEMO: http://jsbin.com/omAWEhO/8/quiet
 
-IMAGE DEMO:http://jsbin.com/eMEKiNo/2/quiet
+IMAGE DEMO: http://jsbin.com/eMEKiNo/4/quiet
 
 This is how the CSS Keyframe preloader works.
 
