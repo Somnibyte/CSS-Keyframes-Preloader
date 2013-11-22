@@ -1,10 +1,12 @@
-CSS Keyframe Preloader
+# CSS Keyframe Preloader
 
 
 [Note: this is my first time posting ANYTHING on Github, hold your judgements for later (I'll fix up this readme once I get the hang of things around here)]
 
 [Note:The keyframe feature may not work for older browsers, please be aware of this before you claim to see "no" effect, for more information
 on browser support please click on the link below. Thank you.]
+
+## Demo and Information
 
 UPDATE: 11:54 p.m. / Animations now support all browsers! (-webkit- was used in previous version) 
 
@@ -20,7 +22,7 @@ Ideology: Hide the inner content of the body, by using the body element itself t
 
 -Head over to textpreloader.html to see an example of the text preloading animation. -Head over to imagepreloader.html to see an example of the image preloading animation. -Note: NO javascript was used, nor Jquery.
 
-'The Algorithm':
+##Design
 
 The body is given a key frame of a very dark color to hide the content, here is an example:
 
@@ -119,5 +121,6 @@ And bind it to the elment of your choosing (The one that will be displayed as te
  animation: emblemPreload 4s ease-out;
  
 }
+
 
 NOTE: This is a prototype as of now. Any ideas are welcomed to improve this prototype of mine. You may modify the code to your liking. Remember to give credit, and give me a shout out. ;)
