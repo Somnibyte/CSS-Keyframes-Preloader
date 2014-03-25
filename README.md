@@ -12,7 +12,7 @@ BROWSER SUPPORT: http://caniuse.com/#search=keyframe
 
 TEXT DEMO: http://jsbin.com/omAWEhO/8/quiet
 
-IMAGE DEMO: http://jsbin.com/eMEKiNo/4/quiet
+IMAGE DEMO: http://jsbin.com/eMEKiNo/5/quiet
 
 This is how the CSS Keyframe preloader works.
 
