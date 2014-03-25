@@ -8,8 +8,6 @@ on browser support please click on the link below. Thank you.]
 
 ## Demo and Information
 
-UPDATE: 11:54 p.m. / Animations now support all browsers! (-webkit- was used in previous version) 
-
 BROWSER SUPPORT: http://caniuse.com/#search=keyframe
 
 TEXT DEMO: http://jsbin.com/omAWEhO/8/quiet
@@ -18,9 +16,13 @@ IMAGE DEMO: http://jsbin.com/eMEKiNo/4/quiet
 
 This is how the CSS Keyframe preloader works.
 
-Ideology: Hide the inner content of the body, by using the body element itself to cover the content with whatever background you choose. Once the page loads, there is a keyframe that activates and animates the background to cover the content. Special features may be added, for example text or images.
+##Methodology
 
--Head over to textpreloader.html to see an example of the text preloading animation. -Head over to imagepreloader.html to see an example of the image preloading animation. -Note: NO javascript was used, nor Jquery.
+Hide the inner content of the body, by using the body element itself to cover the content with whatever background you choose. Once the page loads, there is a keyframe that activates and animates the background to cover the content. Special features may be added, for example text or images.
+
+-Head over to textpreloader.html to see an example of the text preloading animation. 
+-Head over to imagepreloader.html to see an example of the image preloading animation. 
+-Note: NO Javascript was used, nor Jquery.
 
 ##Design
 
@@ -65,7 +67,7 @@ When the animation was binded to the element, I needed a way to over the content
 }
 
 
-Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: Example of ONE element (since this page only has one content div being used):
+Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: In the example below I use only one element (since this page only has one 'content' div being used):
 
 
 .exampleElement{
