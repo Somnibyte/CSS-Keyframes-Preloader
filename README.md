@@ -28,14 +28,16 @@ Hide the inner content of the body, by using the body element itself to cover th
 
 The body is given a key frame of a very dark color to hide the content, here is an example:
 
+```
 @-webkit-keyframes bodyPreloader{ 0%{background:black;}
 
 }
+```
 
 This keyframe makes the body turn black, so that all pieces of content are covered from the screen (This piece of code was taken from the 'textpreloader.css' file.
 
 What I did next was bind the animation to the body like so:
-
+```
 body{
 background-color: #3498db;
 
@@ -45,11 +47,12 @@ background-color: #3498db;
 -o-animation: bodyPreloader 3s;
 animation: bodyPreloader 3s;
 }
-
+```
 When the animation was binded to the element, I needed a way to over the content. So I gave the content an animation to hide itself until the body was done animating using this keyframe:
 
 [ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)]
 
+```
 @-webkit-keyframes content{
   0%   { opacity: 0; }
 }
@@ -65,11 +68,11 @@ When the animation was binded to the element, I needed a way to over the content
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-
+```
 
 Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: In the example below I use only one element (since this page only has one 'content' div being used):
 
-
+```
 .exampleElement{
 [Element Attributes go below]
 
@@ -79,7 +82,7 @@ Then, I binded the animation to the element (NOTE! if you have many elements tha
    -o-animation: content 1s ease-in;
    animation: content 1s ease-in;
 }
-
+```
 
 There you have it. Now if you would like to add an image (Like SquareSpace) or welcoming text simply make this animation:
 
@@ -87,6 +90,7 @@ There you have it. Now if you would like to add an image (Like SquareSpace) or w
 
 [ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE]
 
+```
 @-webkit-keyframes emblemPreload{
   0%{opacity: 1;}
   50%{opacity: 0;}
@@ -108,9 +112,11 @@ There you have it. Now if you would like to add an image (Like SquareSpace) or w
   50%{opacity: 0;}
   100%{opacity: 0;}
 }
+```
 
 And bind it to the elment of your choosing (The one that will be displayed as text or an image with the body animation (See example for reference)):
 
+```
 .exampleElement{
  [Element attributes go down here]
  
@@ -123,7 +129,7 @@ And bind it to the elment of your choosing (The one that will be displayed as te
  animation: emblemPreload 4s ease-out;
  
 }
-
+```
 
 NOTE: This is a prototype as of now. Any ideas are welcomed to improve this prototype of mine. You may modify the code to your liking. Remember to give credit, and give me a shout out. ;)
 
