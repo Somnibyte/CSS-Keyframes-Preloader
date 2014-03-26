@@ -28,37 +28,145 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Simply download the contents in the zipped file, ready the documentation below, and implement it into your project. </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h2>
+<a name="demo-and-information" class="anchor" href="#demo-and-information"><span class="octicon octicon-link"></span></a>Demo and Information</h2>
+
+<p>BROWSER SUPPORT: <a href="http://caniuse.com/#search=keyframe">http://caniuse.com/#search=keyframe</a></p>
+
+<p>TEXT DEMO: <a href="http://jsbin.com/omAWEhO/8/quiet">http://jsbin.com/omAWEhO/8/quiet</a></p>
+
+<p>IMAGE DEMO: <a href="http://jsbin.com/eMEKiNo/5/quiet">http://jsbin.com/eMEKiNo/5/quiet</a></p>
+
+<p>This is how the CSS Keyframe preloader works.</p>
+
+<h2>
+<a name="methodology" class="anchor" href="#methodology"><span class="octicon octicon-link"></span></a>Methodology</h2>
+
+<p>Hide the inner content of the body, by using the body element itself to cover the content with whatever background you choose. Once the page loads, there is a keyframe that activates and animates the background to cover the content. Special features may be added, for example text or images.</p>
+
+<p>-Head over to textpreloader.html to see an example of the text preloading animation. 
+-Head over to imagepreloader.html to see an example of the image preloading animation. 
+-Note: NO Javascript was used, nor Jquery.</p>
+
+<h2>
+<a name="design" class="anchor" href="#design"><span class="octicon octicon-link"></span></a>Design</h2>
+
+<p>The body is given a key frame of a very dark color to hide the content, here is an example:</p>
+
+<pre><code>@-webkit-keyframes bodyPreloader{ 0%{background:black;}
+
+}
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>This keyframe makes the body turn black, so that all pieces of content are covered from the screen (This piece of code was taken from the 'textpreloader.css' file.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>What I did next was bind the animation to the body like so:</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<pre><code>body{
+background-color: #3498db;
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+-webkit-animation: bodyPreloader 3s;
+-moz-animation: bodyPreloader 3s;
+-o-animation: bodyPreloader 3s;
+animation: bodyPreloader 3s;
+}
+</code></pre>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>When the animation was binded to the element, I needed a way to over the content. So I gave the content an animation to hide itself until the body was done animating using this keyframe:</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>[ANIMATION FOR HIDING CONTENT (WHICH WILL THEN APPEAR LATER)]</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<pre><code>@-webkit-keyframes content{
+  0%   { opacity: 0; }
+}
+@-moz-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes content {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Then, I binded the animation to the element (NOTE! if you have many elements that make up your content (i.e nav, sidebars, ANY KIND OF CONTENT HOLDING DIV THAT IS NOT PART OF THE PRELOADING PROCESS) must have this animation binded to itself to keep it hidden: In the example below I use only one element (since this page only has one 'content' div being used):</p>
+
+<pre><code>.exampleElement{
+[Element Attributes go below]
+
+[Animations down here]
+ -webkit-animation: content 1s ease-in;
+   -moz-animation: content 1s ease-in;
+   -o-animation: content 1s ease-in;
+   animation: content 1s ease-in;
+}
+</code></pre>
+
+<p>There you have it. Now if you would like to add an image (Like SquareSpace) or welcoming text simply make this animation:</p>
+
+<p>[ANIMATION FOR YOUR EMBLEM (WHETHER TEXT OR IMAGE]</p>
+
+<pre><code>@-webkit-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+
+@-moz-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@-o-keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+@keyframes emblemPreload{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 0;}
+}
+</code></pre>
+
+<p>And bind it to the elment of your choosing (The one that will be displayed as text or an image with the body animation (See example for reference)):</p>
+
+<pre><code>.exampleElement{
+ [Element attributes go down here]
+
+
+ [Animations go down here]
+
+  -webkit-animation: emblemPreload 4s ease-out;
+  -moz-animation: emblemPreload 4s ease-out;
+  -o-animation: emblemPreload 4s ease-out;
+ animation: emblemPreload 4s ease-out;
+
+}
+</code></pre>
+
+<p>NOTE: This is a prototype as of now. Any ideas are welcomed to improve this prototype of mine. You may modify the code to your liking. Remember to give credit, and give me a shout out. ;)</p>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>Copyright (c) 2013 Somnibyte Studios</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
         </section>
 
         <aside id="sidebar">
